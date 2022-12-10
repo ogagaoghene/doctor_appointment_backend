@@ -1,22 +1,22 @@
 class Api::V1::RegistrationsController < ApplicationController
   def create
-    user = User.new(user_params)
-
+    user = User.create!(
+    name: params['user']['name'],
+    email: params['user']['email'],
+    password: params['user']['password'],
+    password_confirmation: params['user']['password_confirmation']
+  )
+   
     if user
-      # session[:user_id] = user.id
+      session[:user_id] = user.id
       render json: {
-        status: created,
+        status: :created,
         user: user
       }
     else
       render json: { 
-        user.error.full_messages,
         status: 500 
       }
     end
-  end
-
-  def user_params
-    params.require(:user).permit(:username, :email, :password)
   end
 end
