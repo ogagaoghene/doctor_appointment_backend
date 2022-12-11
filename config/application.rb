@@ -27,6 +27,7 @@ module DoctorAppointmentBackend
     config.api_only = true 
     config.session_store :cookie_store, key: '_doctor_appointment_frontend'
     config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore
     config.middleware.use config.session_store, config.session_options
   end
 end
