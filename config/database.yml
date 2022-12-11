@@ -21,6 +21,8 @@ default: &default
   host: localhost
   username: shine
   password: shine
+  # username: postgres
+  # password: 1234
   port: 5432
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
@@ -32,6 +34,8 @@ development:
   host: localhost
   username: shine
   password: shine
+  # username: postgres
+  # password: 1234
   port: 5432
 
   # The specified database role being used to connect to postgres.
@@ -70,6 +74,8 @@ test:
   host: localhost
   username: shine
   password: shine
+  # username: postgres
+  # password: 1234
   port: 5432
 
 
