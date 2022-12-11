@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   resources :appointments
   resources :doctors
   resources :users
+
+  post '/sign_in_form', to: "sessions#create"
 end
