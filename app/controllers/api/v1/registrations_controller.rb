@@ -1,18 +1,20 @@
 class Api::V1::RegistrationsController < ApplicationController
   def create
-    user = User.create(user_params)
-    if user.save
-      render json: { status: 'created', message: 'Saved Patient', data: user }
+    user = User.create!(user_params)
+    if user
+      session[:name] = user.name
+      render json: { status: :created }
     else
-      render json: { status: 500, message: 'Patient not saved', errors: user.errors }
+      render json: { status: 500 }
     end
   end
 
   private
 
   def user_params
-    params.permit(:name, :email, :password, :password_confirmation)
+    params.require(:registration).permit(:name, :email, :password, :password_confirmation)
   end
+
 end
 
 

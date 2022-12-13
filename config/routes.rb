@@ -7,9 +7,20 @@ Rails.application.routes.draw do
       resources :registrations, only: [:create]
     end
   end
-  resources :appointments
-  resources :doctors
+
+  namespace :api do 
+     namespace :v1 do
+      resources :appointments
+     end 
+  end 
+
+  namespace :api do 
+     namespace :v1 do
+      resources :doctors
+     end 
+  end 
+
   resources :users
 
-  post '/sign_in_form', to: "sessions#create"
+  post "/sign_in_form", to: "sessions#create"
 end
