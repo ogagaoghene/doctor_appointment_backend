@@ -28,6 +28,15 @@ Doctor.create!([{
   location: 'Lagos',
 },
 {
+  name: 'Thompson Clark',
+  email: 't.clark@yahoo.com',
+  phonenumber: '08173887833',
+  specialty: 'Neurologist',
+  years_of_experience: 12,
+  picture: 'https://i.imgur.com/jhIKsTy.jpg',
+  location: 'Port Harcourt',
+},
+{
   name: 'Andrew Okoh',
   email: 'a.okoh@gmail.com',
   fee: '200',
