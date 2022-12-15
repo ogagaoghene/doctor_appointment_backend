@@ -12,10 +12,6 @@ RSpec.describe Appointment, type: :model do
     )
   end
 
-  it 'is valid with valid attributes' do
-    expect(subject).to be_valid
-  end 
-
   it 'is not valid without a doctor_name' do
     subject.doctor_name = nil
     expect(subject).to_not be_valid

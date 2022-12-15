@@ -7,8 +7,9 @@ RSpec.describe Doctor, type: :model do
       email: 'a.okoh@gmail.com',
       phonenumber: '08123467820',
       specialty: 'Gynecologist',
-      picture: 'https://i.imgur.com/g8IFvWq.jpg',
-      location: 'Lagos',
+      fee: 200,
+      picture: 'https://img.freepik.com/free-photo/happy-black-male-doctor-using-tablet-computer-technology-medicine-concept_1262-12344.jpg?w=740&t=st=1671022983~exp=1671023583~hmac=5b3ed441b0fd6349225fa8ea682887b9ccddbd38c83877283adffffd75317083',
+      location: 'Abuja',
       years_of_experience: 6
     )
   end
@@ -43,7 +44,7 @@ RSpec.describe Doctor, type: :model do
     expect(subject).to_not be_valid
   end
 
-   it 'is not valid without years_of_experience' do
+  it 'is not valid without years_of_experience' do
     subject.years_of_experience = nil
     expect(subject).to_not be_valid
   end
