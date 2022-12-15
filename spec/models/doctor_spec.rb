@@ -4,17 +4,17 @@ RSpec.describe Doctor, type: :model do
   subject do
     described_class.new(
       name: 'Andrew Okoh',
-      email: 'nkeiru@yahoo.com',
-      phonenumber: '08079976534',
-      specialty: 'Dentist',
-      years_of_experience: 15,
-      picture: 'https://i.imgur.com/LTJ8mJO.jpg',
-      location: 'Enugu'
+      email: 'a.okoh@gmail.com',
+      phonenumber: '08123467820',
+      specialty: 'Gynecologist',
+      picture: 'https://i.imgur.com/g8IFvWq.jpg',
+      location: 'Lagos',
+      years_of_experience: 6
     )
   end
 
   it 'is not valid without a name' do
-    subject.full_name = nil
+    subject.name = nil
     expect(subject).to_not be_valid
   end
 
@@ -38,13 +38,13 @@ RSpec.describe Doctor, type: :model do
     expect(subject).to_not be_valid
   end
 
-  it 'is not valid without years of experience' do
-    subject.years_of_experience = nil
-    expect(subject).to be_valid
+  it 'is not valid without a phone number' do
+    subject.phonenumber = nil
+    expect(subject).to_not be_valid
   end
 
-  it 'it is not valid without a phone number' do
-    subject.phonenumber = nil
+   it 'is not valid without years_of_experience' do
+    subject.years_of_experience = nil
     expect(subject).to_not be_valid
   end
 end

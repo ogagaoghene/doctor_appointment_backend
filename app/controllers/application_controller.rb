@@ -3,6 +3,7 @@ class ApplicationController < ActionController::API
     include ActionController::Helpers
     skip_before_action :verify_authenticity_token, raise: false
     helper_method :login!, :logged_in?, :current_user, :authorized_user?, :logout!
+    
     def login!
       session[:name] = @user.name
     end
@@ -22,8 +23,9 @@ class ApplicationController < ActionController::API
     private 
     def curent_user
       User.find_by_id(session[:user_id])
+    end
+
     def logout!
       session.clear
     end
-  
-  end
+end
