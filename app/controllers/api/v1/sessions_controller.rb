@@ -14,7 +14,7 @@ class Api::V1::SessionsController < ApplicationController
     if @current_user
       render json: { logged_in: true, user: current_user }, status: 201
     else
-      render json: { logged_in: false, message: 'no such user' }, status: 401
+      render json: { logged_in: false, message: 'user does not exist' }, status: 401
     end
   end
 

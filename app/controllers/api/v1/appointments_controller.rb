@@ -1,16 +1,16 @@
 class Api::V1::AppointmentsController < ApplicationController
   def index
     appointments = Appointment.order('created_at ASC')
-    render json: { status: 'SUCCESS', message: 'Loaded Appointmet list', data: appointments }, status: :ok
+    render json: { status: 'SUCCESS', message: 'Display Appointmet list', data: appointments }, status: :ok
   end
 
   def create
     appointment = Appointment.new(appointment_params)
     if appointment.save
-      render json: { status: 'SUCCESS', message: 'Saved Appointment', data: appointment }, status: 200
+      render json: { status: 'SUCCESS', message: 'Appointment successfully created', data: appointment }, status: 200
     else
       puts appointment.errors.inspect
-      render json: { status: 'ERROR', message: 'Appointment not saved', data: appointment.errors },
+      render json: { status: 'ERROR', message: 'Appointment not successfully created', data: appointment.errors },
              status: :unprocessable_entity
     end
   end
@@ -18,16 +18,16 @@ class Api::V1::AppointmentsController < ApplicationController
   def destroy
     appointment = Appointment.find(params[:id])
     appointment.destroy
-    render json: { status: 'SUCCESS', message: 'Deleted appointment', data: appointment }, status: :ok
+    render json: { status: 'SUCCESS', message: 'Appointment successfully deleted', data: appointment }, status: :ok
   end
 
   def update
     appointment = Appointment.find(params[:id])
     puts appointment
     if appointment.update(appointment_params)
-      render json: { status: 'SUCCESS', message: 'Updated Appointment', data: appointment }, status: :ok
+      render json: { status: 'SUCCESS', message: 'Appointment successfully updated', data: appointment }, status: :ok
     else
-      render json: { status: 'ERROR', message: 'Appointment not updated', data: appointment.errors },
+      render json: { status: 'ERROR', message: 'Appointment not successfully updated', data: appointment.errors },
              status: :unprocessable_entity
     end
   end
