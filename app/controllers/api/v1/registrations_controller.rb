@@ -6,12 +6,11 @@ class Api::V1::RegistrationsController < ApplicationController
       # session[:user_id] = user.id
       render json: {
         status: created,
-        user: user
+        user:
       }
     else
-      render json: { 
-        user.error.full_messages,
-        status: 500 
+      render json: {
+        status: 500
       }
     end
   end
