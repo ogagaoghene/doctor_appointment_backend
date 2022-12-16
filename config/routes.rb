@@ -28,4 +28,5 @@ Rails.application.routes.draw do
   delete "/api/v1/logout", to: "api/v1/sessions#destroy"
   get "api/v1/appointments/:user_id", to: "api/v1/appointments#index"
   post "/sign_in_form", to: "sessions#create"
+  patch "/api/v1/appointments/:id", to: "api/v1/appointments#update"
 end

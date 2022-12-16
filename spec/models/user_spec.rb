@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   subject do
     described_class.new(
-      id: 11,
-      name: 'peter',
-      email: 'peter@example.com',
-      password: 'pet',
-      password_digest: 'pet'
+      id: 1,
+      name: 'Ogaga',
+      email: 'ogaga@gmail.com',
+      password: 'ogaga',
+      password_digest: 'ogaga'
     )
   end
 
