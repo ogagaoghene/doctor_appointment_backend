@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe Doctor, :type => :model do
-  subject {
+RSpec.describe Doctor, type: :model do
+  subject do
     described_class.new(
       name: 'Andrew Okoh',
       email: 'nkeiru@yahoo.com',
@@ -9,8 +9,9 @@ RSpec.describe Doctor, :type => :model do
       specialty: 'Dentist',
       years_of_experience: 15,
       picture: 'https://i.imgur.com/LTJ8mJO.jpg',
-      location: 'Enugu')
- }
+      location: 'Enugu'
+    )
+  end
 
   it 'is not valid without a name' do
     subject.full_name = nil
