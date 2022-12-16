@@ -1,7 +1,7 @@
 class Api::V1::SessionsController < ApplicationController
   def create
     @user = User.find_by(name: session_params[:name])
-    
+
     if @user&.authenticate(session_params[:password])
       login!
       render json: { status: 'created', logged_in: true, data: @user }, status: 201
@@ -29,5 +29,3 @@ class Api::V1::SessionsController < ApplicationController
     params.require(:session).permit(:name, :password)
   end
 end
-
-

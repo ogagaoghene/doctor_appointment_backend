@@ -5,7 +5,7 @@ class UsersController < ApplicationController
       render json: {
         users: @users
       }
-    else 
+    else
       render json: {
         status: 500,
         errors: ['no user found']
