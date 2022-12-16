@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   namespace :api do 
      namespace :v1 do
-      resources :appointments, only: [:create, :index, :destroy]
+      resources :appointments, only: [:create, :index, :destroy, :update]
      end 
   end 
 
@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   get "api/v1/doctors", to: "api/v1/doctors#index"
   get "api/v1/doctors/:id", to: "api/v1/doctors#show"
   post "/appointments", to: "api/v1/appointments#create"
+  delete "/api/v1/logout", to: "api/v1/sessions#destroy"
   get "api/v1/appointments/:user_id", to: "api/v1/appointments#index"
   post "/sign_in_form", to: "sessions#create"
 end
