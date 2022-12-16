@@ -32,10 +32,9 @@
 # 📖 Doctor Appointment Application <a name="about-project"></a>
 
 > A mobile web application that allows for the booking of appointment from a list of available doctors with different specialties. It displays list of available doctors, logged in users can book an appointment, delete and modify appointment bookings.
-### Frontend Repo - [Hello Rails Frontend](https://github.com/ogagaoghene/doctor-appointment-frontend
+### Frontend Repo - [Hello Rails Frontend](https://github.com/ogagaoghene/doctor_appointment_frontend.git
 
 ## Kanban Board
-Link to the project: [Kanban Board](https://github.com/users/braincee/projects/10)
 
 We have set up a Kanban board
 note: We are 2 students working on this project.
@@ -65,7 +64,7 @@ To get a local copy up, follow these simple steps.
 - [x] A code editor like Visual Studio Code with Git and Ruby.
 - Clone the Backend Repo
   git clone https://github.com/ogagaoghene/doctor_appointment_backend.git
-  cd backend-appointment-backend
+  cd doctor_appointment_backend
 - Clone the Frontend Repo
   git clone https://github.com/ogagaoghene/doctor_appointment_frontend.git
 - Run `bundle install` to install all the required dependancies.
