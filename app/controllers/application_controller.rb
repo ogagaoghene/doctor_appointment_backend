@@ -22,5 +22,4 @@ class ApplicationController < ActionController::API
   def logout!
     session.clear
   end
-
 end

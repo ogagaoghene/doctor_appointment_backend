@@ -14,5 +14,3 @@ class Api::V1::RegistrationsController < ApplicationController
     params.permit(:name, :email, :password, :password_confirmation)
   end
 end
-
-
