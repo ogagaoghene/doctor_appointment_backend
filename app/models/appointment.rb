@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Appointment < ApplicationRecord
-  belongs_to :user
-  belongs_to :doctor
-  validates :user_id, :doctor_id, :city, :appointment_time, presence: true
+  # belongs_to :user
+  # belongs_to :doctor
+  validates :location, :appointment_time, :doctor_name, presence: true
 end

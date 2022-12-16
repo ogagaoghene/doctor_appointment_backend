@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_09_155710) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_13_113803) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "appointments", force: :cascade do |t|
-    t.string "city"
+    t.string "location"
     t.datetime "appointment_time"
+    t.string "doctor_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "doctor_id", null: false
@@ -31,7 +32,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_09_155710) do
     t.decimal "fee"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
+    t.string "email"
+    t.string "phonenumber"
+    t.string "picture"
+    t.string "location"
+    t.integer "years_of_experience"
     t.index ["user_id"], name: "index_doctors_on_user_id"
   end
 
@@ -39,9 +45,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_09_155710) do
     t.string "name"
     t.string "email"
     t.string "password"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "password_digest"
   end
 
   add_foreign_key "appointments", "doctors"
