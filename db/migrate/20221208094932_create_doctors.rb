@@ -5,7 +5,7 @@ class CreateDoctors < ActiveRecord::Migration[7.0]
     create_table :doctors do |t|
       t.string :name
       t.string :specialty
-      t.decimal :fee
+      t.integer :fee
 
       t.timestamps
     end

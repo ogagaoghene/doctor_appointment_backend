@@ -23,7 +23,8 @@ class Api::V1::AppointmentsController < ApplicationController
 
   def update
     appointment = Appointment.find(params[:id])
-    if appointment.update_attributes(appointment_params)
+    puts appointment
+    if appointment.update(appointment_params)
       render json: { status: 'SUCCESS', message: 'Updated Appointment', data: appointment }, status: :ok
     else
       render json: { status: 'ERROR', message: 'Appointment not updated', data: appointment.errors },
