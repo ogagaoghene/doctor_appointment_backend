@@ -14,6 +14,31 @@ RSpec.describe Doctor, type: :model do
     )
   end
 
+  it 'is valid with a name not longer than 20 characters' do
+    subject.name = 'Esi Ogagaoghene'
+    expect(subject).to be_valid
+  end
+
+  it 'is valid with a specialty not longer than 30 characters' do
+    subject.specialty = 'Neurologist'
+    expect(subject).to be_valid
+  end
+
+  it 'is valid with a phone number not longer than 15 digits' do
+    subject.phonenumber = '07069102383'
+    expect(subject).to be_valid
+  end
+
+  it 'is valid with an email address with an @ symbol' do
+    subject.email = 'esi@gmail.com'
+    expect(subject).to be_valid
+  end
+
+  it 'is valid with an email address of this form - esi.ogagaoghene@yahoo.com' do
+    subject.email = 'esi.ogagaoghene@yahoo.com'
+    expect(subject).to be_valid
+  end
+
   it 'is not valid without a name' do
     subject.name = nil
     expect(subject).to_not be_valid

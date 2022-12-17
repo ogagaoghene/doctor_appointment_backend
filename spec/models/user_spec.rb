@@ -15,6 +15,31 @@ RSpec.describe User, type: :model do
     expect(subject).to be_valid
   end
 
+  it 'is valid with a name not longer than 20 characters' do
+    subject.name = 'abcccccsssssdee'
+    expect(subject).to be_valid
+  end
+
+  it 'is valid with an email address with an @ symbol' do
+    subject.email = 'esi@gmail.com'
+    expect(subject).to be_valid
+  end
+
+  it 'is valid with an email address of this form - esi.ogagaoghene@yahoo.com' do
+    subject.email = 'esi.ogagaoghene@yahoo.com'
+    expect(subject).to be_valid
+  end
+
+  it 'is invalid with an email address without an @ symbol' do
+    subject.email = 'esigmail.com'
+    expect(subject).to_not be_valid
+  end
+
+  it 'is invalid with a name less than 3 characters' do
+    subject.name = 'ab'
+    expect(subject).to_not be_valid
+  end
+
   it 'is not valid without a name' do
     subject.name = nil
     expect(subject).to_not be_valid
