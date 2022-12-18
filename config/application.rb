@@ -13,6 +13,11 @@ module DoctorAppointmentBackend
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
+    if Rails.env.test?
+      RSpec.configure do |config|
+        config.swagger_dry_run = false
+      end
+    end
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

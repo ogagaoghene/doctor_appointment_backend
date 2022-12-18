@@ -47,6 +47,10 @@ note: We are 2 students working on this project.
 Kanban board link:
 https://github.com/users/ogagaoghene/projects/13
 
+## Documentation
+Follow this [link](http://localhost:3001/api-docs/index.html) to see documentation of SWAGGER API.
+- Type /api-docs/v1/swagger.yaml in the search field and click search. I have not configured it to map to this base url by default hence you have to access it this way.
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
